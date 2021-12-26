@@ -16,8 +16,6 @@
                 <th>Tóm tắt</th>
                 <th>Ngày bắt đầu</th>
                 <th>Ngày kết thúc</th>
-
-
             </tr>
         </thead>
         <tbody>

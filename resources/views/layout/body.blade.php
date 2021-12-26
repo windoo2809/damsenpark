@@ -1,7 +1,5 @@
 <section>
     <div class="main-section">
-
-
         <div class="container main-content">
             <div class=" div-top">
                 <div class="div-sticker1"></div>
@@ -63,12 +61,10 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="div-center "></div>
                     <div class="div-right top360">
                         <div class="tiket-left-child">
                             <div class="div-tiket-child">
-
                             </div>
                             <div class="div-form-tiket">
                                 <form action="#">
@@ -82,22 +78,20 @@
                                     </div>
                                     <div class="input-f  ">
                                         <input type="number" name="" class="qty-ticket-input" placeholder="Số lượng vé">
-                                        <input type="text" name="" id="date" class="date-ticket-input" placeholder="Ngày sử dụng" id="">
+                                        <input type="text" name="" id="date" class="date-ticket-input"
+                                            placeholder="Ngày sử dụng" id="">
                                         <label for="date">
                                             <div class="btndate"></div>
                                         </label>
                                     </div>
                                     <div class="input-format input-f ">
                                         <input type="text" name="" class="" placeholder="Họ và tên">
-
                                     </div>
                                     <div class="input-format  input-f ">
                                         <input type="text" name="" class="" placeholder="Số điện thoại">
-
                                     </div>
                                     <div class="input-format input-f ">
                                         <input type="text" name="" class="" placeholder="Địa chỉ Email">
-
                                     </div>
                                     <div class="btn-order-ticket">
                                         <a href="payment.html" class="btnhover">Đặt vé</a>

@@ -31,7 +31,3 @@ Route::get('show-event', 'App\Http\Controllers\EventController@index');
 Route::get('{id}/edit-event', 'App\Http\Controllers\EventController@edit');
 
 Route::get('delete/{id}', 'App\Http\Controllers\EventController@delete');
-
-
-
-

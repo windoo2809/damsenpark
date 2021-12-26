@@ -19,51 +19,62 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body card-block">
-                            <form action="{{route('event.store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <!-- @method('PATCH') -->
+                            <form action="{{route('event.store')}}" method="post" enctype="multipart/form-data"
+                                class="form-horizontal">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <!-- @method('PATCH') -->
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Tên </label></div>
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Tên </label>
+                                    </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="text-input" name="name" placeholder="........" class="form-control">
+                                        <input type="text" id="text-input" name="name" placeholder="........"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">Ảnh</label></div>
+                                    <div class="col col-md-3"><label for="file-input"
+                                            class=" form-control-label">Ảnh</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="file" id="img" name="image" class="form-control-file hidden" onchange="changeImg(this)">
+                                        <input type="file" id="img" name="image" class="form-control-file hidden"
+                                            onchange="changeImg(this)">
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Giá </label></div>
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Giá </label>
+                                    </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="text-input" name="price" placeholder="........" class="form-control">
+                                        <input type="text" id="text-input" name="price" placeholder="........"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Tóm tắt </label></div>
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Tóm tắt
+                                        </label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="text-input" name="summary" placeholder="........" class="form-control">
+                                        <input type="text" id="text-input" name="summary" placeholder="........"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Ngày bắt đầu</label></div>
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Ngày bắt
+                                            đầu</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="date" id="text-input" name="daystar" placeholder="........" class="form-control">
+                                        <input type="date" id="text-input" name="daystar" placeholder="........"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Ngày kết thúc </label></div>
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Ngày kết
+                                            thúc </label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="date" id="text-input" name="dayend" placeholder="........" class="form-control">
+                                        <input type="date" id="text-input" name="dayend" placeholder="........"
+                                            class="form-control">
                                     </div>
                                 </div>
-                            
-                            
-                            <br>
-                            <input class="btn btn-success float-right" type="submit" value="Thêm">
-                            </form>      
-                        </div>          
+                                <br>
+                                <input class="btn btn-success float-right" type="submit" value="Thêm">
+                            </form>
+                        </div>
                     </div><!-- .content -->
                 </div><!-- .content -->
             </div><!-- .content -->

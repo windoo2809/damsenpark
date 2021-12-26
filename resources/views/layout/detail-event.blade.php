@@ -33,7 +33,8 @@
                     <div class="event-detail-child ">
                         <div class="event-detail-left ">
                             <img src="{{asset('img/sukien1.png')}}" alt="">
-                            <p class="card-date pt-3"><img src="{{asset('img/calendar.png')}}" width="18px" alt=""> 30/05/2021 -
+                            <p class="card-date pt-3"><img src="{{asset('img/calendar.png')}}" width="18px" alt="">
+                                30/05/2021 -
                                 01/06/2021</p>
                             <p class="card-text py-2">Đầm sen park</p>
                             <p class="card-price">25.000 VNĐ</p>
