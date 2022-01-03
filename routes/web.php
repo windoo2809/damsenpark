@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ContactController;
 
 //index
 Route::get('/', 'App\Http\Controllers\HomeController@index');
@@ -9,9 +10,11 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 //sukien
 Route::get('/su-kien', 'App\Http\Controllers\HomeController@event');
 
-
 //lienhe
 Route::get('/lien-he', 'App\Http\Controllers\HomeController@contact');
+
+//sendmail
+Route::post('/send-mail','App\Http\Controllers\HomeController@sendEmail')->name('send.email');
 
 //chitietsukien
 Route::get('/su-kien-chi-tiet', 'App\Http\Controllers\HomeController@detailevent');

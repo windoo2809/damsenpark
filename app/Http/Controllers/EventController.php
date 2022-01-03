@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Event;
-
+use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
 {
@@ -21,12 +21,13 @@ class EventController extends Controller
     }
 
 
-    public function store( Request $request){
+    public function store( EventRequest $request){
         $data = $request->all();
         $image = $request->file('image');
+        $imagename = $image;                                 
         $imagename = $image->getClientOriginalName();                                 
         $storedPath = $image->move('img', $image->getClientOriginalName());
-
+        
         $event = new event();
         $event->name= $data['name'];
         $event->image =  $imagename; 
@@ -51,7 +52,7 @@ class EventController extends Controller
         ];
         return view('admin.event.update',$data);
     }
-    public function update(Request $request, $id)
+    public function update(EventRequest $request, $id)
     {
         $data = $request->all();
         $image = $request->file('image');
@@ -62,6 +63,9 @@ class EventController extends Controller
         $event->name= $data['name'];
         $event->image =  $imagename; 
         $event->price= $data['price'];
+        $event->summary =  $data['summary'];
+        $event->daystar= $data['daystar'];
+        $event->dayend= $data['dayend'];
 
         $event->save();
         return Redirect::to("event");

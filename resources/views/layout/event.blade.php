@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đầm sen park</title>
+    <title>ĐẦM SEN PARK</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -55,7 +55,7 @@
                                                     {{$events[$i]->daystar}} - {{$events[$i]->dayend}}
                                                 </p>
                                                 <p class="card-price">{{$events[$i]->price}}đ</p>
-                                                <a href="/su-kien-chi-tiet" class="card-btn btnhover">Xem chi tiết</a>
+                                                <a href="{{url('/su-kien-chi-tiet')}}" class="card-btn btnhover">Xem chi tiết</a>
                                             </div>
                                         </div>
                                 </div>
@@ -76,12 +76,13 @@
                                                 {{$events[$i]->daystar}} - {{$events[$i]->dayend}}
                                             </p>
                                             <p class="card-price">{{$events[$i]->price}}đ</p>
-                                            <a href="/su-kien-chi-tiet" class="card-btn btnhover">Xem chi tiết</a>
+                                            <a href="{{url('/su-kien-chi-tiet')}}" class="card-btn btnhover">Xem chi tiết</a>
                                         </div>
                                     </div>
                             </div>
                             @endfor
                         </div>
+    
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

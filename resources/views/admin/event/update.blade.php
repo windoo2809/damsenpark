@@ -29,6 +29,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="text-input" name="name" placeholder="..."
                                             value="{{$event->name}}" class="form-control">
+                                            @error('name')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -37,6 +38,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="file" id="img" name="image" class="form-control-file hidden"
                                             onchange="changeImg(this)">
+                                            @error('image')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -45,6 +47,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="text-input" name="price" placeholder="..."
                                             value="{{$event->price}}" class="form-control">
+                                            @error('price')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -53,6 +56,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="text-input" name="summary" value="{{$event->summary}}"
                                             placeholder="..." class="form-control">
+                                            @error('summary')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -61,6 +65,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="date" id="text-input" name="daystar" value="{{$event->daystar}}"
                                             placeholder="........" class="form-control">
+                                            @error('daystar')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -69,6 +74,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="date" id="text-input" name="dayend" value="{{$event->dayend}}"
                                             placeholder="..." class="form-control">
+                                            @error('dayend')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <br>

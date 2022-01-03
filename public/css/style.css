@@ -424,8 +424,8 @@
         display: flex;
     }
     
-    .btn-order-ticket a {
-        width: 80%;
+    .btn-order-ticket button {
+        width: 100%;
         margin: 0 auto;
         height: 45px;
         font-family: "iCielKoni", sans-serif;
@@ -870,7 +870,7 @@
         font-size: 18px;
     }
     
-    .btnhover:hover {
+    .button .btnhover:hover {
         color: #ffd5d5;
         background-color: #a71318;
         transition: 0.3s;
