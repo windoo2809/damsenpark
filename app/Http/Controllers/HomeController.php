@@ -22,6 +22,15 @@ class HomeController extends Controller
         return view('layout.event',$data);
     }
 
+    public function detailevent($id){
+        $events = event::where('id',$id)->limit(1)->get();
+        $data = [
+            'events' => $events,
+        ];
+        return view('layout.detail-event',$data);
+    }
+
+
     public function contact(){
         return view('layout.contact');
     }
@@ -38,10 +47,6 @@ class HomeController extends Controller
            $mail->from($req->email);
            $mail->subject('Đầm sen Park');
        });
-    }
-
-    public function detailevent(){
-        return view('layout.detail-event');
     }
 
     public function payment(){

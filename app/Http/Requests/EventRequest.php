@@ -28,6 +28,7 @@ class EventRequest extends FormRequest
             'image' => 'required',
             'price' => 'required',
             'summary' => 'required',
+            'content' => 'required',
             'daystar' => 'required',
             'dayend' => 'required',
            ];
@@ -39,6 +40,7 @@ class EventRequest extends FormRequest
              'image.required' => 'Vui lòng nhập ảnh',
              'price.required' => 'Vui lòng nhập giá',
              'summary.required' => 'Vui lòng nhập tóm tắt',
+             'content.required' => 'Vui lòng nhập nội dung',
              'daystar.required' => 'Vui lòng nhập ngày bắt đầu',
              'dayend.required' => 'Vui lòng nhập ngày kết thúc',
         ];

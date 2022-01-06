@@ -29,7 +29,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="text-input" name="name" placeholder="........"
                                             class="form-control" value="{{old('name')}} ">
-                                            @error('name')<small class="alert-danger">{{ $message }}</small>@enderror
+                                        @error('name')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -39,16 +39,17 @@
                                     <div class="col-12 col-md-9">
                                         <input type="file" id="img" name="image" class="form-control-file hidden"
                                             onchange="changeImg(this)">
-                                            @error('image')<small class="alert-danger">{{ $message }} </small>@enderror
+                                        @error('image')<small class="alert-danger">{{ $message }} </small>@enderror
                                     </div>
                                 </div>
+                                
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="name" class=" form-control-label">Giá </label>
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="text-input" name="price" placeholder="........"
                                             class="form-control" value="{{old('price')}} ">
-                                            @error('price')<small class="alert-danger">{{ $message }}</small>@enderror
+                                        @error('price')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -58,7 +59,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="text-input" name="summary" placeholder="........"
                                             class="form-control" value="{{old('summary')}} ">
-                                            @error('summary')<small class="alert-danger">{{ $message }}</small>@enderror
+                                        @error('summary')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -67,7 +68,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="date" id="text-input" name="daystar" placeholder="........"
                                             class="form-control" value="{{old('daystar')}} ">
-                                            @error('daystar')<small class="alert-danger">{{ $message }}</small>@enderror
+                                        @error('daystar')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -76,7 +77,33 @@
                                     <div class="col-12 col-md-9">
                                         <input type="date" id="text-input" name="dayend" placeholder="........"
                                             class="form-control" value="{{old('dayend')}} ">
-                                            @error('dayend')<small class="alert-danger">{{ $message }}</small>@enderror
+                                        @error('dayend')<small class="alert-danger">{{ $message }}</small>@enderror
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Tiêu đề nội dung </label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" id="text-input" name="titlecontent" placeholder="........"
+                                            class="form-control" value="{{old('titlecontent')}} ">
+                                        @error('titlecontent')<small class="alert-danger">{{ $message }}</small>@enderror
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Nội dung
+                                        </label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea class="form-control" name="content" id="exampleFormControlTextarea1"
+                                            rows="3">{{$event->content}}</textarea>
+                                        @error('content')<small class="alert-danger">{{ $message }}</small>@enderror
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Nội dung 1
+                                        </label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea class="form-control" name="content1" id="exampleFormControlTextarea1"
+                                            rows="3">{{$event->content1}}</textarea>
+                                        @error('content1')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
                                 <br>

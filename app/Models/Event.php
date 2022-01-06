@@ -10,7 +10,7 @@ class Event extends Model
 {
     public $timestamps = true;
     protected $fillable = [
-        'name','image','price','summary','daystar','dayend',
+        'name','image','price','summary','daystar','dayend','content','titlecontent','content1','gallery'
     ];
     protected $primarykey = 'id';
     protected $table = 'event';

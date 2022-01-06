@@ -35,6 +35,10 @@ class EventController extends Controller
         $event->summary =  $data['summary'];
         $event->daystar= $data['daystar'];
         $event->dayend= $data['dayend'];
+        $event->titlecontent= $data['titlecontent'];
+        $event->content= $data['content'];
+        $event->content1= $data['content1'];
+        $event->gallery= $data['gallery'];
         $event->save(); 
         
         return Redirect::to("event");
@@ -52,7 +56,7 @@ class EventController extends Controller
         ];
         return view('admin.event.update',$data);
     }
-    public function update(EventRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
         $image = $request->file('image');
@@ -66,7 +70,10 @@ class EventController extends Controller
         $event->summary =  $data['summary'];
         $event->daystar= $data['daystar'];
         $event->dayend= $data['dayend'];
-
+        $event->titlecontent= $data['titlecontent'];
+        $event->content= $data['content'];
+        $event->content1= $data['content1'];
+        $event->gallery= $data['gallery'];
         $event->save();
         return Redirect::to("event");
     }

@@ -77,6 +77,32 @@
                                             @error('dayend')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Tiêu đề nội dung </label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" id="text-input" name="titlecontent" placeholder="........"
+                                            class="form-control" value="{{$event->titlecontent}} ">
+                                        @error('titlecontent')<small class="alert-danger">{{ $message }}</small>@enderror
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Nội dung
+                                        </label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea class="form-control" name ="content" id="exampleFormControlTextarea1"
+                                            rows="3">{{$event->content}}</textarea>
+                                        @error('content')<small class="alert-danger">{{ $message }}</small>@enderror
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name" class=" form-control-label">Nội dung 1
+                                        </label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea class="form-control" name ="content1" id="exampleFormControlTextarea1"
+                                            rows="3">{{$event->content1}}</textarea>
+                                        @error('content1')<small class="alert-danger">{{ $message }}</small>@enderror
+                                    </div>
+                                </div>
                                 <br>
                                 <input class="btn btn-success float-right" type="submit" value="Thêm">
                             </form>

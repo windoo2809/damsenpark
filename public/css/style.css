@@ -271,8 +271,6 @@
         font-weight: bold;
         line-height: 30px;
     }
-    .text-line-star p{
-    }
 
 
     .div-star {
@@ -1086,16 +1084,20 @@
     .div-tel {
         display: none !important;
     }
+    .tiket-left-child-bot{
+        margin-top: 110px;
+        font-size: 10px;
+    }
 
     .text-line-star {
-        margin: 0px;
         width: 100%;
     }
 
     .text-line-star p {
+        position: static;
         font-size: 13px;
-        line-height: 18px;
-        width: calc(100% - 20px);
+        font-weight: bold;
+        line-height: 20px;
     }
     
 
@@ -1108,6 +1110,11 @@
         font-size: 12px;
         line-height: 20px;
     }
+    .tiket-left-child-top span{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
 
    
 
@@ -1142,7 +1149,7 @@
   
 
     .main-section {
-        height: 1650px;
+        height: 1350px;
     }
 
     .div-left {

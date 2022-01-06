@@ -17,7 +17,7 @@ Route::get('/lien-he', 'App\Http\Controllers\HomeController@contact');
 Route::post('/send-mail','App\Http\Controllers\HomeController@sendEmail')->name('send.email');
 
 //chitietsukien
-Route::get('/su-kien-chi-tiet', 'App\Http\Controllers\HomeController@detailevent');
+Route::get('/su-kien-chi-tiet/{id}', 'App\Http\Controllers\HomeController@detailevent');
 
 //thanhtoan
 Route::get('thanh-toan', 'App\Http\Controllers\HomeController@payment');

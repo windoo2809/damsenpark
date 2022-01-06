@@ -47,7 +47,7 @@
             </div>
         </div>
     </header>
-    <script src="{{asset('js/cus.js')}}"></script>
+    <script src="{{asset('js/js.js')}}"></script>
 </body>
 
 </html>

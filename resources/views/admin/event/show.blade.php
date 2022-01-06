@@ -14,6 +14,7 @@
                 <th>Ảnh</th>
                 <th>Giá</th>
                 <th>Tóm tắt</th>
+                <th>Nội dung</th>
                 <th>Ngày bắt đầu</th>
                 <th>Ngày kết thúc</th>
             </tr>
@@ -29,6 +30,7 @@
                 </td>
                 <td>{{$row->price}}</td>
                 <td>{{$row->summary}}</td>
+                <td>{{$row->content}}</td>
                 <td>{{$row->daystar}}</td>
                 <td>{{$row->dayend}}</td>
                 <td><a href="{{url('/event')}}/{{$row->id}}/edit" class="btn btn-warning">Cập nhật</a></td>

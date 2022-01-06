@@ -26,51 +26,43 @@
                 </div>
                 <div class="line-right">
                 </div>
+                @foreach ($events as $row)
                 <div class="text-event">
-                    <p>Sự kiện 1</p>
+                    <p>   {{$row->name}} </p>
                 </div>
                 <div class="event-detail-content  ">
                     <div class="event-detail-child ">
                         <div class="event-detail-left ">
                             <img src="{{asset('img/sukien1.png')}}" alt="">
                             <p class="card-date pt-3"><img src="{{asset('img/calendar.png')}}" width="18px" alt="">
-                                30/05/2021 -
-                                01/06/2021</p>
-                            <p class="card-text py-2">Đầm sen park</p>
-                            <p class="card-price">25.000 VNĐ</p>
+                                {{$row->daystar}} -
+                                {{$row->dayend}}</p>
+                            <p class="card-text py-2">   {{$row->summary}} </p>
+                            <p class="card-price">   {{$row->price}} VNĐ</p>
                         </div>
                         <div class=" event-detail-right row mar-0">
                             <div class="col-sm-4">
-                                <span class="hightlight">Lorem Ipsum</span> is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
-                                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book. It has survived not only five centuries, but also the leap into
-                                electronic sdsd typesetting, remaining cssa essentially unchanged. It was popularised in
-                                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, of Lorem
-                                Ipsum.
+                                <span class="hightlight">{{$row->titlecontent}}</span>
+                                {{$row->content}}
                             </div>
                             <div class=" col-sm-4 ">
                                 <img class="img-100" src="{{asset('img/sukien2.png')}}" alt="">
                                 <div class="text-col-second mt-4">
-                                    Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
-                                    literature from 45 BC, making it over 2000 years old. words, consectetur, from a
-                                    Lorem Ipsum passage, and going through the cites of the word in classical
-                                    literature,
+                                {{$row->content1}}
                                 </div>
                             </div>
                             <div class=" col-sm-4 ">
                                 <div class="text-col-second mb-4">
-                                    Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
-                                    literature from 45 BC, making it over 2000 years old. words, consectetur, from a
-                                    Lorem Ipsum passage, and going through the cites of the word in classical
-                                    literature,
+                                {{$row->content1}}
                                 </div>
                                 <img class="img-100" src="{{asset('img/sukien2.png')}}" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
+            
     </section>
 </body>
 
