@@ -153,6 +153,21 @@
                                 </ul>
                             </li>
                             <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-diamond"></i>
+                                    Loại vé
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="{{url('show-category-ve')}}">
+                                            <i class="metismenu-icon"></i>
+                                            Danh sách
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
                             </li>
                         </ul>
                     </div>

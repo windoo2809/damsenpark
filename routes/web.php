@@ -33,4 +33,16 @@ Route::get('show-event', 'App\Http\Controllers\EventController@index');
 
 Route::get('{id}/edit-event', 'App\Http\Controllers\EventController@edit');
 
-Route::get('delete/{id}', 'App\Http\Controllers\EventController@delete');
+Route::get('delete-event/{id}', 'App\Http\Controllers\EventController@delete');
+
+//categor
+//category_ve
+Route::resource('/category-ve',App\Http\Controllers\CategoryVeController::class);
+
+Route::get('add-category-ve', 'App\Http\Controllers\CategoryVeController@create');
+
+Route::get('show-category-ve', 'App\Http\Controllers\CategoryVeController@index');
+
+Route::get('{id}/edit-category-ve', 'App\Http\Controllers\CategoryVeController@edit');
+
+Route::get('delete-category-ve/{id}', 'App\Http\Controllers\CategoryVeController@delete');

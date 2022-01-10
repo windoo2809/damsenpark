@@ -33,7 +33,7 @@
                 <div class="event-detail-content  ">
                     <div class="event-detail-child ">
                         <div class="event-detail-left ">
-                            <img src="{{asset('img/sukien1.png')}}" alt="">
+                            <img src="{{asset('img')}}/{{$row->image}}" alt="">
                             <p class="card-date pt-3"><img src="{{asset('img/calendar.png')}}" width="18px" alt="">
                                 {{$row->daystar}} -
                                 {{$row->dayend}}</p>

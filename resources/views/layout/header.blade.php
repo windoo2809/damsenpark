@@ -25,7 +25,7 @@
                     <div class="col-sm-6 div-menu ">
                         <ul class="d-flex nav nav-header align-items-center w-100 d-flex justify-content-around  ">
                             <li class="nav-item ">
-                                <a class=" nav-link  active" href="{{url('/')}}">Trang chủ</a>
+                                <a class=" nav-link  active" href="{{url('/')}}" >Trang chủ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " href="{{url('su-kien')}}">Sự kiện</a>

@@ -93,7 +93,7 @@
                                         </label></div>
                                     <div class="col-12 col-md-9">
                                         <textarea class="form-control" name="content" id="exampleFormControlTextarea1"
-                                            rows="3">{{$event->content}}</textarea>
+                                            rows="3" > {{old('content')}}</textarea>
                                         @error('content')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                         </label></div>
                                     <div class="col-12 col-md-9">
                                         <textarea class="form-control" name="content1" id="exampleFormControlTextarea1"
-                                            rows="3">{{$event->content1}}</textarea>
+                                            rows="3"  > {{old('content1')}}</textarea>
                                         @error('content1')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                 </div>

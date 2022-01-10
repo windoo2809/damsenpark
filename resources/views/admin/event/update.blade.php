@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <input class="btn btn-success float-right" type="submit" value="Thêm">
+                                <input class="btn btn-success float-right" type="submit" value="Câp nhật">
                             </form>
                         </div>
                     </div><!-- .content -->

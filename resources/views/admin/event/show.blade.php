@@ -34,7 +34,7 @@
                 <td>{{$row->daystar}}</td>
                 <td>{{$row->dayend}}</td>
                 <td><a href="{{url('/event')}}/{{$row->id}}/edit" class="btn btn-warning">Cập nhật</a></td>
-                <td><a href="delete/{{$row->id}}" class="btn btn-danger">Xóa</a></td>
+                <td><a href="delete-event/{{$row->id}}" class="btn btn-danger">Xóa</a></td>
             </tr>
             @endforeach
         </tbody>

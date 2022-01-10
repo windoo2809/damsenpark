@@ -67,9 +67,10 @@
                             <div class="div-tiket-child">
                             </div>
                             <div class="div-form-tiket">
-                                <form action="#">
+                                <form action="" method="post">
+                                @csrf
                                     <div class="input-f  ">
-                                        <select name="" class="" id="select">
+                                        <select name="pack" class="" id="select">
                                             <option value="">Gói gia đình</option>
                                         </select>
                                         <label for="select">
@@ -77,25 +78,27 @@
                                         </label>
                                     </div>
                                     <div class="input-f  ">
-                                        <input type="number" name="" class="qty-ticket-input" placeholder="Số lượng vé">
-                                        <input type="text" name="" id="date" class="date-ticket-input"
+                                        <input type="number" name="quantily" class="qty-ticket-input"
+                                            placeholder="Số lượng vé">
+                                        <input type="text" name="date" id="date" class="date-ticket-input"
                                             placeholder="Ngày sử dụng" id="">
                                         <label for="date">
                                             <div class="btndate"></div>
                                         </label>
                                     </div>
                                     <div class="input-format input-f ">
-                                        <input type="text" name="" class="" placeholder="Họ và tên">
+                                        <input type="text" name="name" class="" placeholder="Họ và tên">
+                                        @error('name')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                     <div class="input-format  input-f ">
-                                        <input type="text" name="" class="" placeholder="Số điện thoại">
+                                        <input type="text" name="phone" class="" placeholder="Số điện thoại">
                                     </div>
                                     <div class="input-format input-f ">
-                                        <input type="text" name="" class="" placeholder="Địa chỉ Email">
+                                        <input type="text" name="email" class="" placeholder="Địa chỉ Email">
                                     </div>
                                     <div class="btn-order-ticket">
-                                        <a href="payment.html" class="btnhover">Đặt vé</a>
-                                    </div>
+                                    <button class="btnhover" type="submit" >Đặt vé ngay</button>
+                                </div>
                                 </form>
                             </div>
                         </div>

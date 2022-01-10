@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Http\Requests\EventRequest;
+use DB;
 
 class EventController extends Controller
 {
@@ -17,6 +18,7 @@ class EventController extends Controller
     }
 
     public function create(){
+      
         return view('admin.event.add');
     }
 
@@ -38,7 +40,6 @@ class EventController extends Controller
         $event->titlecontent= $data['titlecontent'];
         $event->content= $data['content'];
         $event->content1= $data['content1'];
-        $event->gallery= $data['gallery'];
         $event->save(); 
         
         return Redirect::to("event");
@@ -73,14 +74,14 @@ class EventController extends Controller
         $event->titlecontent= $data['titlecontent'];
         $event->content= $data['content'];
         $event->content1= $data['content1'];
-        $event->gallery= $data['gallery'];
+
         $event->save();
         return Redirect::to("event");
     }
 
     public function delete($id)
     {
-    $event =  event::find($id);
+     $event =  event::find($id);
      $event->delete();
       return Redirect::to("event");
     }
