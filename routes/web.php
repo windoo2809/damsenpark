@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\VeController;
 //index
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
@@ -35,7 +35,6 @@ Route::get('{id}/edit-event', 'App\Http\Controllers\EventController@edit');
 
 Route::get('delete-event/{id}', 'App\Http\Controllers\EventController@delete');
 
-//categor
 //category_ve
 Route::resource('/category-ve',App\Http\Controllers\CategoryVeController::class);
 
@@ -46,3 +45,8 @@ Route::get('show-category-ve', 'App\Http\Controllers\CategoryVeController@index'
 Route::get('{id}/edit-category-ve', 'App\Http\Controllers\CategoryVeController@edit');
 
 Route::get('delete-category-ve/{id}', 'App\Http\Controllers\CategoryVeController@delete');
+
+//order 
+Route::resource('/order',App\Http\Controllers\VeController::class);
+
+Route::post('/', 'App\Http\Controllers\VeController@booking');

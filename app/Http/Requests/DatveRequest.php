@@ -38,7 +38,7 @@ class DatveRequest extends FormRequest
              'name.required' => 'Vui lòng nhập tên',
              'email.required' => 'Vui lòng nhập email',
              'phone.required' => 'Vui lòng nhập số điện thoại',
-             'quantily.required' => 'Vui lòng chọn số lượng',
+             'quantily.required' => 'Nhập số lượng',
              'date.required' => 'Vui lòng chọn ngày',
         ];
     }

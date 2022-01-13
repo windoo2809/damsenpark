@@ -67,7 +67,7 @@
                             <div class="div-tiket-child">
                             </div>
                             <div class="div-form-tiket">
-                                <form action="" method="post">
+                                <form action="{{route('order.store')}}" method="POST" >
                                 @csrf
                                     <div class="input-f  ">
                                         <select name="pack" class="" id="select">
@@ -79,22 +79,24 @@
                                     </div>
                                     <div class="input-f  ">
                                         <input type="number" name="quantily" class="qty-ticket-input"
-                                            placeholder="Số lượng vé">
+                                            placeholder="Số lượng vé" value="{{old('quantily')}}" >
                                         <input type="text" name="date" id="date" class="date-ticket-input"
-                                            placeholder="Ngày sử dụng" id="">
+                                            placeholder="Ngày sử dụng" id="" value="{{old('date')}}" >
                                         <label for="date">
                                             <div class="btndate"></div>
                                         </label>
                                     </div>
                                     <div class="input-format input-f ">
-                                        <input type="text" name="name" class="" placeholder="Họ và tên">
+                                        <input type="text" name="name" class="" placeholder="Họ và tên" value="{{old('name')}}">
                                         @error('name')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                     <div class="input-format  input-f ">
-                                        <input type="text" name="phone" class="" placeholder="Số điện thoại">
+                                        <input type="text" name="phone" class="" placeholder="Số điện thoại" value="{{old('phone')}}">
+                                        @error('phone')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                     <div class="input-format input-f ">
-                                        <input type="text" name="email" class="" placeholder="Địa chỉ Email">
+                                        <input type="text" name="email" class="" placeholder="Địa chỉ Email" value="{{old('email')}}" >
+                                        @error('email')<small class="alert-danger">{{ $message }}</small>@enderror
                                     </div>
                                     <div class="btn-order-ticket">
                                     <button class="btnhover" type="submit" >Đặt vé ngay</button>
@@ -104,12 +106,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
-
 </section>

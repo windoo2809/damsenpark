@@ -7,7 +7,7 @@ use App\Models\Event;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
-use App\Http\Requests\DatveRequest;
+
 
 class HomeController extends Controller
 {
@@ -36,18 +36,6 @@ class HomeController extends Controller
         return view('layout.contact');
     }
     
-    public function body(DatveRequest $request){
-        $data = $request->all();
-
-        $order_ve = new order_ve();
-        $order_ve->name= $data['name'];
-        $order_ve->pack= $data['pack'];
-        $order_ve->email= $data['email'];
-        $order_ve->phone= $data['phone'];
-        $order_ve->quanlity= $data['quanlity'];
-        $order_ve->date= $data['date'];
-        $order_ve->save(); 
-    }
 
 
     public function sendEmail(ContactRequest $req){
