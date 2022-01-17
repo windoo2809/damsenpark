@@ -19,7 +19,6 @@ class CategoryVeController extends Controller
     }
 
     public function create(){
-      
         return view('admin.category_ve.add');
     }
 

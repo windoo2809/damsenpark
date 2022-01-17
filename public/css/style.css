@@ -437,6 +437,22 @@
         border-radius: 5px;
         box-shadow: rgb(139 2 2) 0px 3px 1px 0px;
     }
+
+    .btn-order-ticket .mt-5{
+    width: 100%;
+    margin: 0 auto;
+    height: 45px;
+    font-family: "iCielKoni", sans-serif;
+    background: #FF000A;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 5px;
+    box-shadow: rgb(139 2 2) 0px 3px 1px 0px;
+    }
     
     /* end section css */
     

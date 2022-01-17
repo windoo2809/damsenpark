@@ -24,7 +24,7 @@ class DatveRequest extends FormRequest
     public function rules()
     {
         return [
-            'pack' => 'required',
+            'category_id' => 'required',
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
@@ -34,7 +34,7 @@ class DatveRequest extends FormRequest
     }
     public function messages() {
         return [
-            'pack.required' => 'Vui lòng chọn gói',
+            'category_id.required' => 'Vui lòng chọn gói',
              'name.required' => 'Vui lòng nhập tên',
              'email.required' => 'Vui lòng nhập email',
              'phone.required' => 'Vui lòng nhập số điện thoại',

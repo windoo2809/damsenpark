@@ -21,6 +21,8 @@ Route::get('/su-kien-chi-tiet/{id}', 'App\Http\Controllers\HomeController@detail
 
 //thanhtoan
 Route::get('thanh-toan', 'App\Http\Controllers\HomeController@payment');
+//index
+Route::get('thanh-cong', 'App\Http\Controllers\HomeController@thanhcong');
 
 //admin
 Route::get('admin', 'App\Http\Controllers\HomeController@dashboard');
@@ -47,6 +49,11 @@ Route::get('{id}/edit-category-ve', 'App\Http\Controllers\CategoryVeController@e
 Route::get('delete-category-ve/{id}', 'App\Http\Controllers\CategoryVeController@delete');
 
 //order 
-Route::resource('/order',App\Http\Controllers\VeController::class);
 
-Route::post('/', 'App\Http\Controllers\VeController@booking');
+
+Route::get('add', 'App\Http\Controllers\VeController@add');
+
+Route::post('insert-data', 'App\Http\Controllers\VeController@insert');
+
+
+

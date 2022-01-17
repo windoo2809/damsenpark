@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
-
-<body>
-    <header>
+<header>
         <div class="navigation" id="navigation">
             <div class="container  container h-100">
                 <div class="row  h-100">
@@ -47,7 +45,3 @@
             </div>
         </div>
     </header>
-    <script src="{{asset('js/js.js')}}"></script>
-</body>
-
-</html>

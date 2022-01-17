@@ -9,17 +9,24 @@ use App\Http\Requests\DatveRequest;
 
 class VeController extends Controller
 {
-    public function index(){
-        return view('layout.body');
-    }
+  public function index(){
+    return view('layout.welcome');
+  }
 
-    public function store(DatveRequest $request){
-        $data = $request->all();
-        
-        $order = new Order();
-        $order->name= $data['name'];
-        $order->save(); 
-        
-        return Redirect::to("body");
-    }
+  public function add(){
+      return view('add');
+
+  }
+  public function insert(DatveRequest $request){
+      $order = new Order();
+      $order->name = $request->input('name');
+      $order->category_id = $request->input('category_id');
+      $order->email = $request->input('email');
+      $order->phone = $request->input('phone');
+      $order->quantily = $request->input('quantily');
+      $order->date = $request->input('date');
+
+      $order->save();
+      return redirect('add')->with('status', 'ok');
+  }
 }

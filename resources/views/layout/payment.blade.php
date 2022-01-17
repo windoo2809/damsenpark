@@ -34,28 +34,28 @@
                                 <div class="d-flex pl-5  justify-content-between mt-5 block">
                                     <div class="div-input-price input-f d-block">
                                         <label for="" class="w-100">Số tiền thanh toán</label>
-                                        <input type="text" name="" class="">
+                                        <input type="text" name="price" class="">
                                     </div>
                                     <div class="div-input-qty input-f d-inline">
                                         <label for="" class="w-100 ">Số lượng vé</label>
-                                        <input type="text" name="" class=""> <span> vé</span>
+                                        <input type="text" name="quantily" class=""> <span> vé</span>
                                     </div>
                                     <div class="div-input-date input-f d-block">
                                         <label class="w-100" for="">Ngày sử dụng</label>
-                                        <input type="date" name="" class="">
+                                        <input type="date" name="date" class="">
                                     </div>
                                 </div>
                                 <div class="tt-lienhe mt-4 pl-5 input-f d-block ">
                                     <label class="w-100" for="">Thông tin liên hệ</label>
-                                    <input type="text" name="" class="input-ttlh">
+                                    <input type="text" name="infor" class="input-ttlh">
                                 </div>
                                 <div class="tt-lienhe mt-5 pl-5 input-f d-block ">
-                                    <label class="w-100" for="">Điện thoại</label>
-                                    <input type="text" name="" class="input-ttlh">
+                                    <label class="w-100" for="=">Điện thoại</label>
+                                    <input type="text" name="phone" class="input-ttlh">
                                 </div>
                                 <div class="tt-lienhe mt-5 pl-5 input-f d-block ">
                                     <label class="w-100" for="">Email</label>
-                                    <input type="text" name="" class="input-ttlh">
+                                    <input type="text" name="email" class="input-ttlh">
                                 </div>
                             </div>
                         </div>
@@ -68,14 +68,14 @@
                                     <form action="#">
                                         <div class="tt-lienhe mt-5 input-f d-block ">
                                             <label class="w-100" for="">Số thẻ</label>
-                                            <input type="text" name="" class="w-100  ">
+                                            <input type="text" name="sothe" class="w-100  ">
                                         </div>
                                         <div class="tt-lienhe mt-5 input-f d-block ">
                                             <label class="w-100" for="">Họ tên chủ thẻ</label>
-                                            <input type="text" name="" class="w-100 ">
+                                            <input type="text" name="hoten" class="w-100 ">
                                         </div>
                                         <div class="tt-lienhe   input-f mt-5 d-block  ">
-                                            <label class="w-100" for="">Họ tên chủ thẻ</label>
+                                            <label class="w-100" for="">Ngày hết hạn</label>
                                             <div class=" d-flex tt-lienhe   input-f ">
                                                 <input type="text" name="" id="date" class="date-ticket-input w40"
                                                     placeholder="Ngày sử dụng" id="">
@@ -89,7 +89,7 @@
                                             <input type="text" name="" class="">
                                         </div>
                                         <div class="btn-order-ticket mt-5">
-                                            <a href="payment-success.html" class="mt-2 btnhover">Thanh toán</a>
+                                            <button type="submit" class="mt-2 btnhover" >Thanh toán</button>
                                         </div>
                                     </form>
                                 </div>

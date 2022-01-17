@@ -12,7 +12,7 @@ use App\Mail\ContactMail;
 class HomeController extends Controller
 {
     public function index(){
-        return view('welcome');
+        return view('add');
     }
 
     public function event(){
@@ -56,6 +56,10 @@ class HomeController extends Controller
 
     public function payment(){
         return view('layout.payment');
+    }
+
+    public function thanhcong(){
+        return view('layout.thanhcong');
     }
 
     public function dashboard(){

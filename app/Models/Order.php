@@ -9,7 +9,7 @@ class Order extends Model
 {
     public $timestamps = true;
     protected $fillable = [
-        'name','pack','phone','email','quanlity',
+        'name','category_id','phone','email','quanlity','date',
     ];
     protected $primarykey = 'id';
     protected $table = 'order_ve';

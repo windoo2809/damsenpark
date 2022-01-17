@@ -1,3 +1,6 @@
+@extends('layout.welcome')
+
+@section('content')
 <section>
     <div class="main-section">
         <div class="container main-content">
@@ -67,11 +70,26 @@
                             <div class="div-tiket-child">
                             </div>
                             <div class="div-form-tiket">
-                                <form action="{{route('order.store')}}" method="POST" >
-                                @csrf
+                                @if(Session::get('success'))
+                                      <div class="alert alert-success">
+                                          {{Session::get('success')}}
+                                      </div>
+                                @endif
+                                @if(Session::get('fail'))
+                                      <div class="alert alert-danger">
+                                          {{Session::get('fail')}}
+                                      </div>
+                                @endif
+                                <form action="{{url('insert-data')}}" method="post" >
+                                    @csrf
                                     <div class="input-f  ">
-                                        <select name="pack" class="" id="select">
-                                            <option value="">Gói gia đình</option>
+                                        <select name="category_id" class="" id="select">
+                                        @php 
+                                                 $kq = DB::select("select id, name from category_ve ");
+                                                 foreach ($kq as $category_ve){
+                                                   echo" <option value='{$category_ve->id}'>{$category_ve->name}</option> ";
+                                                 }
+                                            @endphp
                                         </select>
                                         <label for="select">
                                             <div class="btnselect"></div>
@@ -110,3 +128,4 @@
         </div>
     </div>
 </section>
+@endsection
