@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\VeController;
+
 //index
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
@@ -20,7 +21,7 @@ Route::post('/send-mail','App\Http\Controllers\HomeController@sendEmail')->name(
 Route::get('/su-kien-chi-tiet/{id}', 'App\Http\Controllers\HomeController@detailevent');
 
 //thanhtoan
-Route::get('thanh-toan', 'App\Http\Controllers\HomeController@payment');
+Route::get('thanh-toan', 'App\Http\Controllers\VeController@pay');
 //index
 Route::get('thanh-cong', 'App\Http\Controllers\HomeController@thanhcong');
 
@@ -50,10 +51,13 @@ Route::get('delete-category-ve/{id}', 'App\Http\Controllers\CategoryVeController
 
 //order 
 
+Route::get('show-order', 'App\Http\Controllers\VeController@index');
 
 Route::get('add', 'App\Http\Controllers\VeController@add');
 
 Route::post('insert-data', 'App\Http\Controllers\VeController@insert');
+
+Route::get('delete-order/{id}', 'App\Http\Controllers\VeController@delete');
 
 
 

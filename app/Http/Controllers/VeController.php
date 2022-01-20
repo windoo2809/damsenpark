@@ -6,11 +6,16 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Http\Requests\DatveRequest;
+use DB;
 
 class VeController extends Controller
 {
   public function index(){
-    return view('layout.welcome');
+    $order_ve = Order::all();
+        $data = [
+            'order_ve' => $order_ve,
+        ];
+    return view('admin.order_ve.show',$data);
   }
 
   public function add(){
@@ -27,6 +32,19 @@ class VeController extends Controller
       $order->date = $request->input('date');
 
       $order->save();
-      return redirect('add')->with('status', 'ok');
+      return redirect('thanh-toan')->with('status', 'ok');
   }
+
+  public function pay(Request $request)
+  {
+      return view('layout.payment');
+  }
+
+  public function delete($id)
+  {
+  $order_ve =  Order::find($id);
+   $order_ve->delete();
+    return Redirect::to("show-order");
+  }
+
 }

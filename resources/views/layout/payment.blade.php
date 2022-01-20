@@ -30,7 +30,7 @@
                         </div>
                         <div class="div-left ">
                             <div class="vecuaban"></div>
-                            <div class="tiket-left-child pl-5 pr-5 pad-5">
+                         <form action="" class="tiket-left-child pl-5 pr-5 pad-5">
                                 <div class="d-flex pl-5  justify-content-between mt-5 block">
                                     <div class="div-input-price input-f d-block">
                                         <label for="" class="w-100">Số tiền thanh toán</label>
@@ -57,7 +57,7 @@
                                     <label class="w-100" for="">Email</label>
                                     <input type="text" name="email" class="input-ttlh">
                                 </div>
-                            </div>
+                        </form>
                         </div>
                         <div class="div-center stiker-custom "></div>
                         <div class="div-right h700px">

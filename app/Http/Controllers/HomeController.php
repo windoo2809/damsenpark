@@ -53,11 +53,6 @@ class HomeController extends Controller
        return view('layout.contact');
     }
     
-
-    public function payment(){
-        return view('layout.payment');
-    }
-
     public function thanhcong(){
         return view('layout.thanhcong');
     }
