@@ -7,7 +7,9 @@ use App\Models\Event;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
+use App\Models\User;
 
+use Auth;
 
 class HomeController extends Controller
 {
@@ -37,7 +39,6 @@ class HomeController extends Controller
     }
     
 
-
     public function sendEmail(ContactRequest $req){
        Mail::send('layout.email',[
            'name' => $req->name,
@@ -59,6 +60,35 @@ class HomeController extends Controller
 
     public function dashboard(){
         return view('admin.dashboard');
+    }
+
+    public function getlogin(){
+        return view('layout.login');
+
+    }
+    public function postlogin(Request $request){
+        $arr =[
+            'name' => $request ->name,
+            'password' => $request->password,
+        ];
+        if(Auth::attempt($arr)){
+            dd('ok');
+        }else{
+            dd('fail');
+
+        }  
+    }
+
+    public function getregister() {
+        return view('layout.register');
+    }
+    public function postregister(Request $request) {
+        $user = new User();
+        $user->name = $request->name;
+        $user->password = $request->password;
+        $user->save();
+
+        return Redirect::to("login");
     }
 
 }

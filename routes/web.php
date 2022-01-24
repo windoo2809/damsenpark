@@ -60,4 +60,14 @@ Route::post('insert-data', 'App\Http\Controllers\VeController@insert');
 Route::get('delete-order/{id}', 'App\Http\Controllers\VeController@delete');
 
 
+//login
+Route::get('login', 'App\Http\Controllers\HomeController@getlogin');
+
+Route::post('login', 'App\Http\Controllers\HomeController@postlogin');
+//register
+Route::get('register', 'App\Http\Controllers\HomeController@getregister');
+
+Route::post('register', 'App\Http\Controllers\HomeController@postregister');
+
+
 
