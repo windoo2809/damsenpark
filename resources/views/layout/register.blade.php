@@ -6,36 +6,33 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
 </script>
-<div class="row">
-    <div class="col-md-8">
-        <form action="register" method="post">
-            @csrf
-            <h1 style="text-align: center;">Đăng ký</h1>
-            <div class="container">
-                <label for="uname"><b>Họ và tên</b></label>
-                <input type="text" placeholder="Enter Username" name="name">
-
-                <label for="psw"><b>Mật khẩu</b></label>
-                <input type="password" placeholder="Enter Password" name="password">
-
-                <button type="submit">Đăng ký</button>
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" class="cancelbtn">Thoát</button>
-                <span class="psw"> <a href="#">Quên mật khẩu?</a></span>
-            </div>
-        </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <form action="register" method="post">
+                @csrf
+                <h1 style="text-align: center;">Đăng ký</h1>
+                <div class="container">
+                    <label for="uname"><b>Họ và tên</b></label>
+                    <input type="text" placeholder="Enter Username" name="name">
+                    <label for="psw"><b>Mật khẩu</b></label>
+                    <input type="password" placeholder="Enter Password" name="password">
+                    <button type="submit">Đăng ký</button>
+                </div>
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">Thoát</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
 <style>
 /* Bordered form */
 
 form {
     border: 3px solid #f1f1f1;
     position: relative;
-    margin-left: 500px;
+    margin-left: 400px;
     margin-top: 50px;
 }
 

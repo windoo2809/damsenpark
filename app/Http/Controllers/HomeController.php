@@ -8,6 +8,7 @@ use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 use Auth;
 
@@ -66,29 +67,17 @@ class HomeController extends Controller
         return view('layout.login');
 
     }
-    public function postlogin(Request $request){
-        $arr =[
-            'name' => $request ->name,
-            'password' => $request->password,
-        ];
-        if(Auth::attempt($arr)){
-            dd('ok');
-        }else{
-            dd('fail');
-
-        }  
-    }
 
     public function getregister() {
         return view('layout.register');
     }
+
     public function postregister(Request $request) {
         $user = new User();
         $user->name = $request->name;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->save();
 
         return Redirect::to("login");
     }
-
 }
