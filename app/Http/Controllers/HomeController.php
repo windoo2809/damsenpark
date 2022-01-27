@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-
+use App\Http\Requests\UserRequest;
 use Auth;
+use Alert;
+use Illuminate\Http\Response;
 
 class HomeController extends Controller
 {
@@ -52,7 +54,7 @@ class HomeController extends Controller
            $mail->from($req->email);
            $mail->subject('Đầm sen Park');
        });
-       return view('layout.contact');
+       return redirect('lien-he')->with('success','Gửi email thành công, vui lòng kiểm tra!!');
     }
     
     public function thanhcong(){
@@ -68,16 +70,51 @@ class HomeController extends Controller
 
     }
 
+    public function postlogin(Request $request){
+      $data = [
+          'email' => $request->email,
+          'password' => $request->password,
+      ];
+      if(Auth::attempt($data)){
+         return view('admin/dashboard', $data);
+        }else{
+       return redirect('login')->with('error','Sai email hoặc mật khẩu');
+    }
+    }
     public function getregister() {
         return view('layout.register');
     }
 
-    public function postregister(Request $request) {
+    public function postregister(UserRequest $request) {
         $user = new User();
         $user->name = $request->name;
+        $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
+    
+        return redirect('register')->with('success','Đăng ký thành công');
+
+    }
+
+    public function logout(Request $request) {
+        $request-> session()->forget('id');
+        $request-> session()->forget('password');
 
         return Redirect::to("login");
     }
+    public function showuser(){
+        $user = User::all();
+        $data = [
+            'user' => $user,
+        ];
+    return view('admin.user.show',$data);
+    }
+    public function deleteuser($id)
+  {
+  $user =  User::find($id);
+   $user->delete();
+    return Redirect::to("show-user");
+  }
+
+    
 }

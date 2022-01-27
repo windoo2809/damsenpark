@@ -83,8 +83,7 @@
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
                                             class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">User
-                                                Account</button>
+                                            <a href="{{url('/logout')}}">  <button type="button" tabindex="0" class="dropdown-item"> Thoát</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -176,6 +175,21 @@
                                 <ul>
                                     <li>
                                         <a href="{{url('show-category-ve')}}">
+                                            <i class="metismenu-icon"></i>
+                                            Danh sách
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-diamond"></i>
+                                   Thành viên
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="{{url('show-user')}}">
                                             <i class="metismenu-icon"></i>
                                             Danh sách
                                         </a>

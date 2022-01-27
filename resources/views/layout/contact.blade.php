@@ -24,6 +24,14 @@
                 <p>Liên hệ</p>
             </div>
             <div class="container div-contact">
+                @if (session('success'))
+                <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    <strong> {{session('success')}}</strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
                 <div class="contact-left">
                     <div class="sticker-boy"></div>
                     <div class="contact-left-child">
@@ -32,7 +40,7 @@
                             volutpat tellus quis risus volutpat, ut posuere ex facilisis.
                         </div>
                         <form action="{{route ('send.email')}}" method="post">
-                        @csrf
+                            @csrf
                             <div class="form-contact w-100">
                                 <div class="w-100 input-f input-cus ">
                                     <input type="text" name="name" class="input-name" placeholder="Tên">
@@ -47,11 +55,12 @@
                                     @error('address')<small class="alert-danger">{{ $message }}</small>@enderror
                                 </div>
                                 <div class="w-100 input-f input-cus div-input-messages mb-3 ">
-                                    <textarea name="content" class="input-message w-100" placeholder="Lời nhắn"></textarea>
+                                    <textarea name="content" class="input-message w-100"
+                                        placeholder="Lời nhắn"></textarea>
                                 </div>
                                 @error('content')<small class="alert-danger">{{ $message }}</small>@enderror
                                 <div class="btn-order-ticket mt-4">
-                                    <button class="btnhover" type="submit" >Gửi liên hệ</button>
+                                    <button class="btnhover" type="submit">Gửi liên hệ</button>
                                 </div>
                             </div>
                         </form>

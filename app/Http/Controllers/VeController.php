@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Http\Requests\DatveRequest;
 use DB;
+Use Alert;
 
 class VeController extends Controller
 {
@@ -32,7 +33,7 @@ class VeController extends Controller
       $order->date = $request->input('date');
 
       $order->save();
-      return redirect('thanh-toan')->with('status', 'ok');
+      return redirect('thanh-toan')->with('success','Đặt vé thành công!!');
   }
 
   public function pay(Request $request)

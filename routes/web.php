@@ -26,7 +26,8 @@ Route::get('thanh-toan', 'App\Http\Controllers\VeController@pay');
 Route::get('thanh-cong', 'App\Http\Controllers\HomeController@thanhcong');
 
 //admin
-Route::get('admin', 'App\Http\Controllers\HomeController@dashboard');
+
+ Route::get('admin', 'App\Http\Controllers\HomeController@dashboard');
 
 Route::resource('/event',App\Http\Controllers\EventController::class);
 
@@ -39,35 +40,32 @@ Route::get('{id}/edit-event', 'App\Http\Controllers\EventController@edit');
 Route::get('delete-event/{id}', 'App\Http\Controllers\EventController@delete');
 
 //category_ve
-Route::resource('/category-ve',App\Http\Controllers\CategoryVeController::class);
-
-Route::get('add-category-ve', 'App\Http\Controllers\CategoryVeController@create');
-
-Route::get('show-category-ve', 'App\Http\Controllers\CategoryVeController@index');
-
-Route::get('{id}/edit-category-ve', 'App\Http\Controllers\CategoryVeController@edit');
-
-Route::get('delete-category-ve/{id}', 'App\Http\Controllers\CategoryVeController@delete');
+    Route::resource('/category-ve',App\Http\Controllers\CategoryVeController::class);
+    Route::get('add-category-ve', 'App\Http\Controllers\CategoryVeController@create');
+    Route::get('show-category-ve', 'App\Http\Controllers\CategoryVeController@index');
+    Route::get('{id}/edit-category-ve', 'App\Http\Controllers\CategoryVeController@edit');
+    Route::get('delete-category-ve/{id}', 'App\Http\Controllers\CategoryVeController@delete');
 
 //order 
 
 Route::get('show-order', 'App\Http\Controllers\VeController@index');
-
 Route::get('add', 'App\Http\Controllers\VeController@add');
-
 Route::post('insert-data', 'App\Http\Controllers\VeController@insert');
-
 Route::get('delete-order/{id}', 'App\Http\Controllers\VeController@delete');
 
+//user
+Route::get('show-user', 'App\Http\Controllers\HomeController@showuser');
+Route::get('delete-user/{id}', 'App\Http\Controllers\HomeController@deleteuser');
 
 //login
 Route::get('login', 'App\Http\Controllers\HomeController@getlogin');
-
 Route::post('login', 'App\Http\Controllers\HomeController@postlogin');
+
+
 //register
 Route::get('register', 'App\Http\Controllers\HomeController@getregister');
-
 Route::post('register', 'App\Http\Controllers\HomeController@postregister');
 
-
+//logout
+Route::get('logout', 'App\Http\Controllers\HomeController@logout');
 

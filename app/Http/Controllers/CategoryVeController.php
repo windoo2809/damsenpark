@@ -7,9 +7,14 @@ use App\Models\CategoryVe;
 use DB; 
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\CategoryVeRequest;
-
+use Toastr;
+use Alert;
 class CategoryVeController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
     public function index(){
         $category_ve = DB::table('category_ve')->get();
         $data = [
@@ -31,7 +36,6 @@ class CategoryVeController extends Controller
         $category_ve->price= $data['price'];
     
         $category_ve->save(); 
-
         return Redirect::to("category-ve");
     }
 

@@ -9,20 +9,26 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <form action="register" method="post">
+            <form action="login" method="post">
+              @if (session('success'))
+                <div class="alert alert-danger text-center">
+                    {{session('success')}}
+                </div>
+                @endif
+                @csrf
                 <h1 style="text-align: center;">Đăng nhập</h1>
                 <div class="container">
-                    <label for="uname"><b>Họ và tên</b></label>
-                    <input type="text" placeholder="Enter Username" name="name">
-
+                    <label for="psw"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email">
+                    @error('email')<small class="alert-danger">{{ $message }}</small>@enderror <br>
                     <label for="psw"><b>Mật khẩu</b></label>
                     <input type="password" placeholder="Enter Password" name="password">
-
+                    @error('password')<small class="alert-danger">{{ $message }}</small>@enderror
                     <button type="submit">Đăng nhập</button>
                 </div>
                 <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" class="cancelbtn">Thoát</button>
-                    
+                    <a href="{{url('/')}}"> <button type="button" class="cancelbtn">Thoát</button></a>
+                    <span class="psw">Chưa có tài khoản <a href="{{url('register')}}">đăng ký?</a></span>
                 </div>
             </form>
         </div>
