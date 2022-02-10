@@ -12,9 +12,9 @@ use Alert;
 class CategoryVeController extends Controller
 {
 
-    public function __construct() {
-        $this->middleware('auth');
-    }
+    // public function __construct() {
+    //     $this->middleware('auth');
+    // }
     public function index(){
         $category_ve = DB::table('category_ve')->get();
         $data = [

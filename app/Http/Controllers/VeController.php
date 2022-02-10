@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\CategoryVe;
 use App\Http\Requests\DatveRequest;
 use DB;
 Use Alert;
+use Illuminate\Support\Facades\Session;
 
 class VeController extends Controller
 {
@@ -24,6 +26,10 @@ class VeController extends Controller
 
   }
   public function insert(DatveRequest $request){
+      // $giave = CategoryVe::find($id);
+      // $tien=($request->quantily)*($giave->price);
+      
+
       $order = new Order();
       $order->name = $request->input('name');
       $order->category_id = $request->input('category_id');
@@ -31,9 +37,18 @@ class VeController extends Controller
       $order->phone = $request->input('phone');
       $order->quantily = $request->input('quantily');
       $order->date = $request->input('date');
-
       $order->save();
-      return redirect('thanh-toan')->with('success','Đặt vé thành công!!');
+
+      session()->put('quantily', $request->quantily);
+      session()->put('phone',$request->phone );
+      session()->put('date',$request->date);
+      session()->put('name',$request->name);
+      session()->put('email',$request->email );
+      // session()->put('tien', $tien);
+      // session()->put('id_ve', $id_ve);
+      session()->put('category_id', $request->category_id);
+
+      return Redirect::to('thanh-toan')->with('success','Đặt vé thành công!!');
   }
 
   public function pay(Request $request)

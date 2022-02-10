@@ -30,34 +30,35 @@
                         </div>
                         <div class="div-left ">
                             <div class="vecuaban"></div>
-                         <form action="" class="tiket-left-child pl-5 pr-5 pad-5">
+                            <form action="" class="tiket-left-child pl-5 pr-5 pad-5">
                                 <div class="d-flex pl-5  justify-content-between mt-5 block">
                                     <div class="div-input-price input-f d-block">
                                         <label for="" class="w-100">Số tiền thanh toán</label>
-                                        <input type="text" name="price" class="">
+                                        <input type="text" name="" class="" value="{{number_format(session('tien'))}}">
+                                    
                                     </div>
                                     <div class="div-input-qty input-f d-inline">
                                         <label for="" class="w-100 ">Số lượng vé</label>
-                                        <input type="text" name="quantily" class=""> <span> vé</span>
+                                        <input type="text" name="quantily" class="" value="{{session('quantily')}} "> <span> vé</span>
                                     </div>
                                     <div class="div-input-date input-f d-block">
                                         <label class="w-100" for="">Ngày sử dụng</label>
-                                        <input type="date" name="date" class="">
+                                        <input type="text" name="date" class="" value="{{session('date')}}">
                                     </div>
                                 </div>
                                 <div class="tt-lienhe mt-4 pl-5 input-f d-block ">
                                     <label class="w-100" for="">Thông tin liên hệ</label>
-                                    <input type="text" name="infor" class="input-ttlh">
+                                    <input type="text" name="name" class="input-ttlh" value="{{session('name')}}">
                                 </div>
                                 <div class="tt-lienhe mt-5 pl-5 input-f d-block ">
                                     <label class="w-100" for="=">Điện thoại</label>
-                                    <input type="text" name="phone" class="input-ttlh">
+                                    <input type="text" name="phone" class="input-ttlh" value="{{session('phone')}}">
                                 </div>
                                 <div class="tt-lienhe mt-5 pl-5 input-f d-block ">
                                     <label class="w-100" for="">Email</label>
-                                    <input type="text" name="email" class="input-ttlh">
+                                    <input type="text" name="email" class="input-ttlh" value="{{session('email')}}">
                                 </div>
-                        </form>
+                            </form>
                         </div>
                         <div class="div-center stiker-custom "></div>
                         <div class="div-right h700px">
@@ -65,7 +66,7 @@
                                 <div class="sticker-payment">
                                 </div>
                                 <div class="div-form-tiket p-2">
-                                    <form action="#">
+                                    <form action="{{url('insert-data')}}" method="post">
                                         <div class="tt-lienhe mt-5 input-f d-block ">
                                             <label class="w-100" for="">Số thẻ</label>
                                             <input type="text" name="sothe" class="w-100  ">
@@ -77,7 +78,7 @@
                                         <div class="tt-lienhe   input-f mt-5 d-block  ">
                                             <label class="w-100" for="">Ngày hết hạn</label>
                                             <div class=" d-flex tt-lienhe   input-f ">
-                                                <input type="text" name="" id="date" class="date-ticket-input w40"
+                                                <input type="date" name="" id="date" class="date-ticket-input w40"
                                                     placeholder="Ngày sử dụng" id="">
                                                 <label for="date">
                                                     <div class="btndate"></div>
@@ -89,7 +90,7 @@
                                             <input type="text" name="" class="">
                                         </div>
                                         <div class="btn-order-ticket mt-5">
-                                            <button type="submit" class="mt-2 btnhover" >Thanh toán</button>
+                                            <button type="submit" class="mt-2 btnhover">Thanh toán</button>
                                         </div>
                                     </form>
                                 </div>

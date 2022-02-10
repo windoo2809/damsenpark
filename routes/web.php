@@ -47,11 +47,13 @@ Route::get('delete-event/{id}', 'App\Http\Controllers\EventController@delete');
     Route::get('delete-category-ve/{id}', 'App\Http\Controllers\CategoryVeController@delete');
 
 //order 
-
 Route::get('show-order', 'App\Http\Controllers\VeController@index');
 Route::get('add', 'App\Http\Controllers\VeController@add');
 Route::post('insert-data', 'App\Http\Controllers\VeController@insert');
 Route::get('delete-order/{id}', 'App\Http\Controllers\VeController@delete');
+
+//payment
+Route::get('show-payment', 'App\Http\Controllers\PaymentController@index');
 
 //user
 Route::get('show-user', 'App\Http\Controllers\HomeController@showuser');
