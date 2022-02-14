@@ -65,7 +65,7 @@ class CategoryVeController extends Controller
 
     public function delete($id)
     {
-    $category_ve =  CategoryVe::find($id);
+     $category_ve =  CategoryVe::find($id);
      $category_ve->delete();
       return Redirect::to("category-ve");
     }

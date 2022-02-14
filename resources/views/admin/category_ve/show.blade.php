@@ -20,7 +20,7 @@
                 <td><input type="checkbox" name="checkbox[]" class="checkbox" value="" id=""></td>
                 <td>{{$row->id}}</td>
                 <td>{{$row->name}}</td>
-                <td>{{$row->price}}</td>
+                <td>{{number_format($row->price)}}</td>
                 <td><a href="{{url('/category-ve')}}/{{$row->id}}/edit" class="btn btn-warning">Cập nhật</a></td>
                 <td><a href="delete-category-ve/{{$row->id}}" class="btn btn-danger">Xóa</a></td>
             </tr>

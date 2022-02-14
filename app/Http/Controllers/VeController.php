@@ -23,13 +23,13 @@ class VeController extends Controller
 
   public function add(){
       return view('add');
-
   }
-  public function insert(DatveRequest $request){
-      // $giave = CategoryVe::find($id);
-      // $tien=($request->quantily)*($giave->price);
-      
 
+  public function insert(DatveRequest $request){
+     $category_id = CategoryVe::find($request->category_id);
+     $total = ($request->quantily)*($category_id->price);
+
+     $data = $request-> all();
       $order = new Order();
       $order->name = $request->input('name');
       $order->category_id = $request->input('category_id');
@@ -44,22 +44,19 @@ class VeController extends Controller
       session()->put('date',$request->date);
       session()->put('name',$request->name);
       session()->put('email',$request->email );
-      // session()->put('tien', $tien);
+      session()->put('total', $total);
       // session()->put('id_ve', $id_ve);
-      session()->put('category_id', $request->category_id);
+      // session()->put('category_id', $request->category_id);
 
       return Redirect::to('thanh-toan')->with('success','Đặt vé thành công!!');
   }
 
-  public function pay(Request $request)
-  {
-      return view('layout.payment');
-  }
+
 
   public function delete($id)
   {
-  $order_ve =  Order::find($id);
-   $order_ve->delete();
+    $order_ve =  Order::find($id);
+    $order_ve->delete();
     return Redirect::to("show-order");
   }
 

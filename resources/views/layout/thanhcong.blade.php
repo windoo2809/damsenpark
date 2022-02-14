@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đầm sen park</title>
+    <title>ĐẦM SEN PARK</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-@include('layout.header');
+    @include('layout.header');
     <section>
         <div class="main-section">
             <div class="text-event">
@@ -60,7 +60,7 @@
                                             <div class="col-md-3" style="float:left">
                                                 <div class="card mb-2">
                                                     <div class="img-qr">
-                                                        <img class="card-img-top" src="images/qr.png" width="100px"
+                                                        <img class="card-img-top" src="{{asset('img/qr.png')}}" width="100px"
                                                             alt="Card image cap">
                                                     </div>
                                                     <div class="card-body text-center">
@@ -82,7 +82,7 @@
                                 Số lượng: 12 vé
                             </div>
                             <div class="qty-payment float-right">
-                                Trang 1/3
+                                Trang 1
                             </div>
                         </div>
                     </div>
@@ -97,6 +97,7 @@
     </section>
     <script src="assets/js/custom.js"></script>
 </body>
+
 </html>
 <script>
 $(document).ready(() => {

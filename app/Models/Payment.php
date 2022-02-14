@@ -9,7 +9,7 @@ class Payment extends Model
 {
     public $timestamps = true;
     protected $fillable = [
-        'name','quantily','email','date','phone','number_card','name_card','date_card','CCV_CVC',
+       'number_card','order_ve_id','name_card','date_card','CCV_CVC',
     ];
     protected $primarykey = 'id';
     protected $table = 'pay';

@@ -9,7 +9,7 @@ class CategoryVe extends Model
 {
     public $timestamps = true;
     protected $fillable = [
-        'name','price',
+        'name','price','code'
     ];
     protected $primarykey = 'id';
     protected $table = 'category_ve';

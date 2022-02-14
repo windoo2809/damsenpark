@@ -55,7 +55,8 @@
                                                     {{$events[$i]->daystar}} - {{$events[$i]->dayend}}
                                                 </p>
                                                 <p class="card-price">{{$events[$i]->price}}đ</p>
-                                                <a href="{{url('/su-kien-chi-tiet')}}/{{$events[$i]->id}}" class="card-btn btnhover">Xem chi tiết</a>
+                                                <a href="{{url('/su-kien-chi-tiet')}}/{{$events[$i]->id}}"
+                                                    class="card-btn btnhover">Xem chi tiết</a>
                                             </div>
                                         </div>
                                 </div>
@@ -76,13 +77,14 @@
                                                 {{$events[$i]->daystar}} - {{$events[$i]->dayend}}
                                             </p>
                                             <p class="card-price">{{$events[$i]->price}}đ</p>
-                                            <a href="{{url('/su-kien-chi-tiet')}}/{{$events[$i]->id}}" class="card-btn btnhover">Xem chi tiết</a>
+                                            <a href="{{url('/su-kien-chi-tiet')}}/{{$events[$i]->id}}"
+                                                class="card-btn btnhover">Xem chi tiết</a>
                                         </div>
                                     </div>
                             </div>
                             @endfor
                         </div>
-    
+
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

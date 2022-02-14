@@ -34,12 +34,12 @@
                                 <div class="d-flex pl-5  justify-content-between mt-5 block">
                                     <div class="div-input-price input-f d-block">
                                         <label for="" class="w-100">Số tiền thanh toán</label>
-                                        <input type="text" name="" class="" value="{{number_format(session('tien'))}}">
-                                    
+                                        <input type="text" name="total" class="" value="{{number_format(session('total'))}} VNĐ">
                                     </div>
                                     <div class="div-input-qty input-f d-inline">
                                         <label for="" class="w-100 ">Số lượng vé</label>
-                                        <input type="text" name="quantily" class="" value="{{session('quantily')}} "> <span> vé</span>
+                                        <input type="text" name="quantily" class="" value="{{session('quantily')}} ">
+                                        <span></span>
                                     </div>
                                     <div class="div-input-date input-f d-block">
                                         <label class="w-100" for="">Ngày sử dụng</label>
@@ -66,19 +66,20 @@
                                 <div class="sticker-payment">
                                 </div>
                                 <div class="div-form-tiket p-2">
-                                    <form action="{{url('insert-data')}}" method="post">
+                                    <form action="thanh-toan" method="post">
+                                    @csrf
                                         <div class="tt-lienhe mt-5 input-f d-block ">
                                             <label class="w-100" for="">Số thẻ</label>
-                                            <input type="text" name="sothe" class="w-100  ">
+                                            <input type="text" name="number_card" class="w-100  ">
                                         </div>
                                         <div class="tt-lienhe mt-5 input-f d-block ">
                                             <label class="w-100" for="">Họ tên chủ thẻ</label>
-                                            <input type="text" name="hoten" class="w-100 ">
+                                            <input type="text" name="name_card" class="w-100 ">
                                         </div>
                                         <div class="tt-lienhe   input-f mt-5 d-block  ">
                                             <label class="w-100" for="">Ngày hết hạn</label>
                                             <div class=" d-flex tt-lienhe   input-f ">
-                                                <input type="date" name="" id="date" class="date-ticket-input w40"
+                                                <input type="date" name="date_card" id="date" class="date-ticket-input w40"
                                                     placeholder="Ngày sử dụng" id="">
                                                 <label for="date">
                                                     <div class="btndate"></div>
@@ -87,7 +88,7 @@
                                         </div>
                                         <div class="tt-lienhe my-5   input-f d-block">
                                             <label for="" class="w-100 ">CVV/CVC</label>
-                                            <input type="text" name="" class="">
+                                            <input type="text" name="CVV_CVC" class="">
                                         </div>
                                         <div class="btn-order-ticket mt-5">
                                             <button type="submit" class="mt-2 btnhover">Thanh toán</button>

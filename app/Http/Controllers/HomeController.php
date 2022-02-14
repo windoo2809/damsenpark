@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Order;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
@@ -67,7 +68,6 @@ class HomeController extends Controller
 
     public function getlogin(){
         return view('layout.login');
-
     }
 
     public function postlogin(Request $request){
