@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\CategoryVe;
+use App\Models\Ve;
 use App\Http\Requests\DatveRequest;
 use DB;
 Use Alert;
 use Illuminate\Support\Facades\Session;
+
 
 class VeController extends Controller
 {
@@ -29,10 +31,13 @@ class VeController extends Controller
      $category_id = CategoryVe::find($request->category_id);
      $total = ($request->quantily)*($category_id->price);
 
+     $ve_id = mt_rand(1,1000);
+
      $data = $request-> all();
       $order = new Order();
       $order->name = $request->input('name');
       $order->category_id = $request->input('category_id');
+      $order->ve_id = $ve_id;
       $order->email = $request->input('email');
       $order->phone = $request->input('phone');
       $order->quantily = $request->input('quantily');
@@ -45,8 +50,8 @@ class VeController extends Controller
       session()->put('name',$request->name);
       session()->put('email',$request->email );
       session()->put('total', $total);
-      // session()->put('id_ve', $id_ve);
-      // session()->put('category_id', $request->category_id);
+      session()->put('category_id',$request->input('category_id') );
+
 
       return Redirect::to('thanh-toan')->with('success','Đặt vé thành công!!');
   }

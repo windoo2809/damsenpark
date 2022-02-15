@@ -66,3 +66,6 @@ Route::post('register', 'App\Http\Controllers\HomeController@postregister');
 
 //logout
 Route::get('logout', 'App\Http\Controllers\HomeController@logout');
+
+//inve
+Route::get('/in-ve/{id}', 'App\Http\Controllers\PaymentController@inve');

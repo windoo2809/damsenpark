@@ -45,57 +45,112 @@
                                 <!--Carousel Wrapper-->
                                 <div id="multi-item-example" class="carousel slide carousel-multi-item"
                                     data-ride="carousel">
-                                    <!--Controls-->
                                     <div class="controls-top">
                                         <a class=" btn-prev btnprev" href="#multi-item-example" data-slide="prev"><img
                                                 src="images/previousbtn.png" width="38px" alt=""></a>
                                         <a class=" btn-next btnnext" href="#multi-item-example" data-slide="next"><img
                                                 src="images/nextbtn.png" width="38px" alt=""></a>
                                     </div>
-                                    <!--/.Controls-->
-                                    <!--Slides-->
                                     <div class="carousel-inner" role="listbox">
-                                        <!--First slide-->
-                                        <div class="carousel-item active">
+                                        @php
+                                        $row = count(session('vedat'));
+                                        $v=Session::get('vedat');
+                                        @endphp
+                                        @if($row <= 4) <div class="carousel-item active">
+                                            @foreach(session('vedat') as $v)
                                             <div class="col-md-3" style="float:left">
                                                 <div class="card mb-2">
                                                     <div class="img-qr">
-                                                        <img class="card-img-top" src="{{asset('img/qr.png')}}" width="100px"
-                                                            alt="Card image cap">
+                                                        <img class="card-img-top"
+                                                            src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl={{$v->code}}"
+                                                            width="100px" alt="Card image cap">
                                                     </div>
                                                     <div class="card-body text-center">
-                                                        <h4 class="card-title">tên</h4>
+                                                        <h4 class="card-title">{{$v->code}}</h4>
                                                         <p class="vecong mb-0">Vé cổng</p>
                                                         <p class="dot my-0 font-weight-bold">---</p>
-                                                        <p class="card-date"> Ngày sử dụng: 31/05/2021</p>
                                                         <div class="mt-3">
                                                             <img src="images/tick.png" width="40px" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            @endforeach
                                     </div>
+                                    @elseif( $row <= 8 && $row> 4)
+                                        <div class="carousel-item active">
+                                            @for ($i = 0; $i < 4; $i++) <div class="col-md-3" style="float:left">
+                                                <div class="card mb-2">
+                                                    <div class="img-qr">
+                                                        <img class="card-img-top"
+                                                            src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl={{$v[$i]->code}}"
+                                                            width="100px" alt="Card image cap">
+                                                    </div>
+                                                    <div class="card-body text-center">
+                                                        <h4 class="card-title">{{$v[$i]->code}}</h4>
+                                                        <p class="vecong mb-0">Vé cổng</p>
+                                                        <p class="dot my-0 font-weight-bold">---</p>
+                                                        <div class="mt-3">
+                                                            <img src="images/tick.png" width="40px" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        @endfor
                                 </div>
+                                <div class="carousel-item ">
+                                    @for ($i = 4; $i < $row; $i++) <div class="col-md-3" style="float:left">
+                                        <div class="card mb-2">
+                                            <div class="img-qr">
+                                                <img class="card-img-top"
+                                                    src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl={{$v[$i]->code}}"
+                                                    width="100px" alt="Card image cap">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h4 class="card-title">{{$v[$i]->code}}</h4>
+                                                <p class="vecong mb-0">Vé cổng</p>
+                                                <p class="dot my-0 font-weight-bold">---</p>
+                                                <div class="mt-3">
+                                                    <img src="images/tick.png" width="40px" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                @endfor
                             </div>
-                            <div class="qty-payment float-left">
-                                Số lượng: 12 vé
-                            </div>
-                            <div class="qty-payment float-right">
-                                Trang 1
-                            </div>
+                            @endif
                         </div>
                     </div>
-                    <div class="btn-double text-center mt-5">
-                        <a href="" class="card-btn btnhover"> Tải về </a>
-                        <a href="#" class="card-btn ml-3 btnhover marign-0">Gửi Email</a>
-                    </div>
                 </div>
-
+                <div class="qty-payment float-left">
+                    Số lượng: {{session('quantily')}} vé
+                </div>
+                <div class="qty-payment float-right">
+                    Trang 1/3
+                </div>
             </div>
         </div>
+        <div class="btn-double text-center mt-5">
+            <a href="{{url('/in-ve/{id}')}}" class="card-btn btnhover"> Tải về </a>
+            <a href="#" class="card-btn ml-3 btnhover marign-0">Gửi Email</a>
+        </div>
+        </div>
+        </div>
+        </div>
     </section>
+
     <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
+<script>
+$(document).ready(() => {
+    $(".bgr-dark").click(() => {
+        $(".bgr-dark").hide();
+    });
+});
+</script>
+<script src="assets/js/custom.js"></script>
 </body>
 
 </html>
