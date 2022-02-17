@@ -108,7 +108,7 @@
                                             </div>
                                             <div class="card-body text-center">
                                                 <h4 class="card-title">{{$v[$i]->code}}</h4>
-                                                <p class="vecong mb-0">Vé cổng</p>
+                                                <p class="vecong mb-0">Vé gia đình</p>
                                                 <p class="dot my-0 font-weight-bold">---</p>
                                                 <div class="mt-3">
                                                     <img src="images/tick.png" width="40px" alt="">
@@ -126,7 +126,7 @@
                     Số lượng: {{session('quantily')}} vé
                 </div>
                 <div class="qty-payment float-right">
-                    Trang 1/3
+                    Trang 1/1
                 </div>
             </div>
         </div>

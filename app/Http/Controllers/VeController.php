@@ -50,6 +50,7 @@ class VeController extends Controller
       session()->put('name',$request->name);
       session()->put('email',$request->email );
       session()->put('total', $total);
+      session()->put('ve_id', $ve_id);
       session()->put('category_id',$request->input('category_id') );
 
 

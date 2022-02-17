@@ -9,7 +9,7 @@ class Ve extends Model
 {
     public $timestamps = true;
     protected $fillable = [
-      'code','date','category_id','ve_id'
+      'code','date','category_id','ve_id',
     ];
     protected $primarykey = 'id';
     protected $table = 've';
