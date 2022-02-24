@@ -30,13 +30,14 @@
                 <p>Thanh toán thành công</p>
             </div>
             <div class="container div-contact">
-                <!-- <div class="bgr-dark ">
-                    <div class="message-contact">
-                        Đặt vé thành công. <br>
-                        Thông tin vé ở bên dưới và Email của bạn !
-                        <div class="close-btn-contact"> X</div>
-                    </div>
-                </div> -->
+            @if (session('success'))
+                <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    <strong> {{session('success')}}</strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
                 <div class="contact-left w-100 h1500px">
                     <div class="sticker-girl2"></div>
                     <div class="contact-left-child p-5 pad-5">
@@ -132,13 +133,42 @@
         </div>
         <div class="btn-double text-center mt-5">
             <a href="{{url('/in-ve/{id}')}}" class="card-btn btnhover"> Tải về </a>
-            <a href="#" class="card-btn ml-3 btnhover marign-0">Gửi Email</a>
+            <a href="javascript:void(0)" id="btn-send-email" data-toggle="modal" data-target="#exampleModal"
+                class="card-btn ml-3 btnhover marign-0">Gửi Email</a>
         </div>
         </div>
         </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-s1">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nhập Email để nhận vé</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{route ('send.emails')}}" method="post">
+                            @csrf
+                            <div class="col-sm-12 input-f input-cus d-block h-auto">
+                                <input type="email" name="email" required="" class="w-100" value=" @if (session('email'))
+                                    {{session("email")}} 
+                                @endif"
+                                    placeholder="Email">
+                                <span class="name-contact-warning">​ </span>
+                                <div class="modal-footer">
+                                    <button type="button" class="card-btn bg-s2" data-dismiss="modal">Đóng</button>
+                                    <button type="submit" class="card-btn btnhover">Gửi Email</button>
+                                </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
-
     <script src="assets/js/custom.js"></script>
 </body>
 
@@ -154,11 +184,3 @@ $(document).ready(() => {
 </body>
 
 </html>
-<script>
-$(document).ready(() => {
-
-    $(".bgr-dark").click(() => {
-        $(".bgr-dark").hide();
-    });
-});
-</script>

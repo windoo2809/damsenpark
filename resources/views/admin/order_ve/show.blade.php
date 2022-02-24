@@ -26,7 +26,6 @@
                 <td>{{$row->phone}}</td>
                 <td>{{$row->email}}</td>
                 <td>{{$row->date}}</td>
-                <td><a href="{{url('/order_ve')}}/{{$row->id}}/edit" class="btn btn-warning">Duyệt</a></td>
                 <td><a href="delete-order/{{$row->id}}" class="btn btn-danger">Xóa</a></td>
             </tr>
             @endforeach

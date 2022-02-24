@@ -8,19 +8,27 @@ use Illuminate\Support\Facades\Redirect;
 use App\Models\Order;
 use App\Models\CategoryVe;
 use App\Models\Ve;
+use App\Models\User;
 use App\Models\Payment;
 use Toastr;
 use Alert;
 use PDF;
+use Illuminate\Pagination\Paginator;
 
 use Carbon\Carbon;
 
 class PaymentController extends Controller
 {
     public function index(){
-        $payment = DB::table('pay')->get();
+        $payment = DB::table('pay')->paginate(10);
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count =  Payment::count();
         $data = [
             'payment' => $payment,
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
         ];
         return view('admin.payment.show',$data);
     }
@@ -65,4 +73,32 @@ class PaymentController extends Controller
         return $pdf->download('Ve-DamSenPark.pdf');
         $request->session()->flush();
     }
+    public function delete($id)
+    {
+     $payment =  Payment::find($id);
+     $payment->delete();
+      return Redirect::to("payment");
+    }
+    function status_update($id)
+{
+	//get product status with the help of product ID
+	$payment = DB::table('pay')
+				->select('status')
+				->where('id','=',$id)
+				->first();
+
+	//Check user status
+	if($payment->status == '1'){
+		$status = '0';
+	}else{
+		$status = '1';
+	}
+
+	//update product status
+	$values = array('status' => $status );
+	DB::table('pay')->where('id',$id)->update($values);
+
+	session()->flash('msg','Product status has been updated successfully.');
+    return Redirect::to("payment");
+}
 }

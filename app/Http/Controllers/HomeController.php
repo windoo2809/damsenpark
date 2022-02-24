@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserRequest;
 use Auth;
 use Alert;
+use DB;
+use App\Models\CategoryVe;
+use App\Models\Ve;
+use App\Models\Payment;
 use Illuminate\Http\Response;
 
 class HomeController extends Controller
 {
+    
     public function index(){
         return view('add');
     }
@@ -42,7 +47,6 @@ class HomeController extends Controller
         return view('layout.contact');
     }
     
-
     public function sendEmail(ContactRequest $req){
        Mail::send('layout.email',[
            'name' => $req->name,
@@ -57,13 +61,37 @@ class HomeController extends Controller
        });
        return redirect('lien-he')->with('success','Gửi email thành công, vui lòng kiểm tra!!');
     }
+    public function sendEmails(Request $req ){
+        $this->emails = $req->email;
+        $data= DB::select("select id, name from category_ve ");
+        $ve_id = $req->session()->get('ve_id');
+        $data = DB::table('ve')->where('ve_id',$ve_id)->get();
+        Mail::send('layout.emaildatve',
+            array(
+                'data' => $data
+              ),
+          function($mail) use ($req){
+            $mail->to('dinhhn2809@gmail.com', $req->name);
+            $mail->from($req->email);
+            $mail->subject('Đầm sen Park');
+        });
+        return redirect()->back();
+     }
     
     public function thanhcong(){
         return view('layout.thanhcong');
     }
 
     public function dashboard(){
-        return view('admin.dashboard');
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count = Payment::count();
+        $data = [
+            'order_count' => $order_count,
+            'user_count' => $user_count,
+            'pay_count' => $pay_count,
+        ];
+        return view('admin.dashboard',$data);
     }
 
     public function getlogin(){
@@ -104,8 +132,14 @@ class HomeController extends Controller
     }
     public function showuser(){
         $user = User::all();
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count = Payment::count();
         $data = [
-            'user' => $user,
+            'user' =>$user,
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
         ];
     return view('admin.user.show',$data);
     }

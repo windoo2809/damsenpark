@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\CategoryVe;
 use App\Models\Ve;
+use App\Models\User;
+use App\Models\Payment;
 use App\Http\Requests\DatveRequest;
 use DB;
 Use Alert;
@@ -17,9 +19,15 @@ class VeController extends Controller
 {
   public function index(){
     $order_ve = Order::all();
-        $data = [
+    $order_count =  Order::count();
+    $user_count =  User::count();
+    $pay_count =  Payment::count();
+      $data = [
             'order_ve' => $order_ve,
-        ];
+             'order_count' => $order_count,
+             'user_count' => $user_count,
+             'pay_count' => $pay_count,
+       ];
     return view('admin.order_ve.show',$data);
   }
 
@@ -31,7 +39,7 @@ class VeController extends Controller
      $category_id = CategoryVe::find($request->category_id);
      $total = ($request->quantily)*($category_id->price);
 
-     $ve_id = mt_rand(1,1000);
+      $ve_id = mt_rand(1,1000);
 
      $data = $request-> all();
       $order = new Order();

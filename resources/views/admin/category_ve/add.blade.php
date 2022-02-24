@@ -12,9 +12,9 @@
 <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
 
 @extends('admin.dashboard')
+@section('nav')
 @section('title','Thêm loại vé')
 @section('content')
-
 <div class="content-wrapper">
     <div class="content mt-2">
         <div class="animated fadeIn">

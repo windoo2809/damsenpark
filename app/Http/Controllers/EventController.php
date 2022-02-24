@@ -5,20 +5,37 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Http\Requests\EventRequest;
+use App\Models\Order;
+use App\Models\User;
+use App\Models\Payment;
 use DB;
 
 class EventController extends Controller
 {
     public function index(){
         $event = event::all();
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count =  Payment::count();
         $data = [
-            'event' => $event,
+            'event' =>$event,
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
         ];
         return view('admin.event.show',$data);
     }
 
     public function create(){
-        return view('admin.event.add');
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count =  Payment::count();
+        $data = [
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
+        ];
+        return view('admin.event.add',$data);
     }
 
 
@@ -51,8 +68,14 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = event::find($id);
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count =  Payment::count();
         $data = [
             'event' => $event,
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
         ];
         return view('admin.event.update',$data);
     }

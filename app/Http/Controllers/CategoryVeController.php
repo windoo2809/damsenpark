@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\CategoryVeRequest;
 use Toastr;
 use Alert;
+use App\Models\Order;
+use App\Models\User;
+use App\Models\Payment;
 class CategoryVeController extends Controller
 {
 
@@ -17,20 +20,34 @@ class CategoryVeController extends Controller
     // }
     public function index(){
         $category_ve = DB::table('category_ve')->get();
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count =  Payment::count();
         $data = [
             'category_ve' => $category_ve,
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
         ];
         return view('admin.category_ve.show',$data);
     }
 
     public function create(){
-        return view('admin.category_ve.add');
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count =  Payment::count();
+        $data = [
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
+        ];
+        return view('admin.category_ve.add',$data);
     }
 
 
     public function store( CategoryVeRequest $request){
         $data = $request->all();
-        
+
         $category_ve = new CategoryVe();
         $category_ve->name= $data['name'];
         $category_ve->price= $data['price'];
@@ -46,8 +63,14 @@ class CategoryVeController extends Controller
     public function edit($id)
     {
         $category_ve = CategoryVe::find($id);
+        $order_count =  Order::count();
+        $user_count =  User::count();
+        $pay_count =  Payment::count();
         $data = [
-            'category_ve' => $category_ve,
+            'category_ve' =>$category_ve,
+            'order_count' => $order_count,
+            'pay_count' => $pay_count,
+            'user_count' => $user_count,
         ];
         return view('admin.category_ve.update',$data);
     }
